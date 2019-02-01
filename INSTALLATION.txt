@@ -1,0 +1,53 @@
+
+The goal of this project was to create a simple plug and play javascript date picker, without the need to use JQuerry.
+
+===============VERSION NOTES===================
+V1.0
+  -encanched javascript code, enriched with comments
+  -implementation of javascript classes, allowing mutliple wigdets to exist on the page
+  -cleaner design
+  -added year picker
+  
+================INSTRUCTIONS===================
+1. copy-paste the folder anywhere where your website can access it (e.g. ~/public_html/)
+2. link your html code with the datepicker.css and the datepicker.js files. You can do this by
+pasting the following lines inside your <head></head> section
+    e.g.
+        <head>
+            <script type="text/javascript" src="path-to/datepicker/datepicker.js"></script>
+            <link rel="stylesheet" href="path-to/datepicker/datepicker.css">
+        </head>
+    replace "path-to" with the actual path to the datepicker folder you have pasted
+3. place the following code inside your html. This will create an input that when you click a datepicker widget will popup and you can pick a date
+   <div id="datepicker_1">
+      <span style="display:inline-block;width:50px;">Date:</span>
+      <input  id="datepicker_input_1" name="fromDate"/>
+      <img id="img_datepicker_1" src="img/calendar.png" onload="initDatePickerWidget(1);"/>
+    </div>
+4. The function that initializes the widget is initDatePickerWidget(id, locale, mode)
+    id            = widgets id
+    locale        = locale to use. Currently supported en, el
+    mode          = 1:dd/mm/YYYY, 2:mm/dd/YYYY, 3:YYYY-mm-dd 
+5. The use of multiple widgets is supported. You only need to assign a different ID number for each widgets
+    e.g.
+      <!-- datepicker #1 -->
+      <div id="datepicker_1">
+        <span style="display:inline-block;width:50px;">Date:</span>
+        <input  id="datepicker_input_1" name="fromDate"/>
+        <img id="img_datepicker_1" src="img/calendar.png" onload="initDatePickerWidget(1);"/>
+      </div>
+      <!-- datepicker #2 -->
+      <div id="datepicker_2">
+        <span style="display:inline-block;width:50px;">Date:</span>
+        <input  id="datepicker_input_2" name="fromDate"/>
+        <img id="img_datepicker_2" src="img/calendar.png" onload="initDatePickerWidget(2);"/>
+      </div>
+
+NOTE:
+    make sure you also have the appropriate meta tag to support greek character encoding:
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+
+That's all! Simply as that your code should work on your website
+ENJOY!
+lsaroukos.gr
